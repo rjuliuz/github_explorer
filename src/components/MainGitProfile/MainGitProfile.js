@@ -10,6 +10,7 @@ import {
 from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faMapMarkerAlt, faUserFriends, faUsers, faStar } from '@fortawesome/free-solid-svg-icons';
+import generic from '../../assets/generic.png';
 
 const MainGitProfile = () => {  
   const {input, setInput, data, getData} = useRequest();
@@ -56,7 +57,7 @@ const MainGitProfile = () => {
           </DivTitle>       
           <DivMain>
             <DivProfile>
-              <ImageProfile src={data.avatar_url} alt="Avatar Github"/>
+              <ImageProfile src={data.avatar_url || generic} alt="Avatar Github"/>
               <UserName>{data.name}</UserName>
               <UserLogin>user: {data.login}</UserLogin>
               <UserIcon><FontAwesomeIcon icon={faMapMarkerAlt} size="2x" style={{color: 'black'}}/><UserInfo>{data.location}</UserInfo></UserIcon>
