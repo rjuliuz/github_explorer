@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import useRequest from '../../context/GlobalProfileData';
 import { BASE_URL, client_id, client_secret } from "../../constants/urls";
@@ -65,8 +65,8 @@ const MainGitProfile = () => {
             </DivProfile>
             <ReposContainer>
               <DivButton>
-                <ButtonRepos onClick={() =>  {getRepos(); console.log(repos)}}>REPOS</ButtonRepos>
-                <ButtonRepos onClick={() =>  {getStarreds(); console.log(repos)}}>STARRED</ButtonRepos>
+                <ButtonRepos onClick={() =>  getRepos()}>REPOS</ButtonRepos>
+                <ButtonRepos onClick={() =>  getStarreds()}>STARRED</ButtonRepos>
               </DivButton>
               <DivRepos>
                 {listOfRepos}

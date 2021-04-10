@@ -12,12 +12,11 @@ import {
 from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { goToProfile } from "../../routes/coordinator";
 
 const MainLanding = () => {
   const history = useHistory();
-  const {input, setInput, getData} = useRequest();  
-
+  const {input, setInput, getData} = useRequest();    
+  
   return (
     <DivContainer>
       <DivTitle>
@@ -25,11 +24,12 @@ const MainLanding = () => {
       </DivTitle>
       <DivInput>
         <InputSearch 
-          type="text"          
+          type="text"   
+          placeholder="Digita um nome de usuário"       
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <ButtonInput onClick={() =>  {getData(); goToProfile(history)}}>
+        <ButtonInput onClick={() => getData("landing", history)}>       
           <FontAwesomeIcon icon={faSearch} size="2x" style={{color: 'white'}}/>
         </ButtonInput>    
       </DivInput>      
